@@ -4,7 +4,7 @@ const path = require("path");
 const {
   isTokenIncluded,
   getAccessTokenFromHeaders,
-} = require("../../helpers/auth/JwtTokenHelpers");
+} = require("../../helpers/auth/jwtTokenHelpers");
 
 const CustomError = require("../../helpers/error/CustomError");
 
