@@ -62,6 +62,8 @@ const MyProfile = () => {
     setUserData({ ...userData, user: registerResponse.data.user });
   };
 
+
+
   return (
     <div className="profileContainer">
       <Modal
@@ -89,8 +91,8 @@ const MyProfile = () => {
             <label htmlFor="avatar_img">
               <div
                 className="avatarUploadBtn"
-                // style={{ pointerEvents: "none" }}
-                // onClick={() => alert("MEDİA ADD")}
+              // style={{ pointerEvents: "none" }}
+              // onClick={() => alert("MEDİA ADD")}
               >
                 <Media />
               </div>
@@ -107,10 +109,10 @@ const MyProfile = () => {
             {!disabled ? (
               <span style={{ fontWeight: "bold" }}>Select İmage</span>
             ) : (
-              <button className="edit_image_btn" onClick={handleOnClick}>
-                Edit Profile İmage
-              </button>
-            )}
+                <button className="edit_image_btn" onClick={handleOnClick}>
+                  Edit Profile İmage
+                </button>
+              )}
           </form>
         </div>
         <div className="myProfileHeaderFollowContainer">
@@ -159,16 +161,20 @@ const MyProfile = () => {
         <div className="myProfileContentRight">
           <h3>Articles</h3>
           {userProfile?.posts?.map((post, index) => (
-            <Card
-              id={post?._id}
-              authorId={post?.author?._id}
-              username={post?.author?.firstName + post?.author?.lastName}
-              title={post?.title}
-              profileImage={post?.author?.avatar_img}
-              date={post?.formatDate}
-              imageUrl={post?.post_image}
-              key={index}
-            />
+            <>
+              <Card
+                id={post?._id}
+                authorId={post?.author?._id}
+                username={post?.author?.firstName + post?.author?.lastName}
+                title={post?.title}
+                profileImage={post?.author?.avatar_img}
+                date={post?.formatDate}
+                imageUrl={post?.post_image}
+                key={index}
+                delete = {true}
+              />
+  
+            </>
           ))}
         </div>
       </div>
