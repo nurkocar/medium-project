@@ -28,14 +28,11 @@ const DetailSectionMiddle = ({ singleArticle }) => {
 
   async function addBookmark() {
     let token = localStorage.getItem("token");
-    const likeData = await axios.get(
-      `/api/posts/${singleArticle._id}/like`,
-      {
-        headers: {
-          "x-auth-token": token,
-        },
-      }
-    );
+    const likeData = await axios.get(`/api/posts/${singleArticle._id}/like`, {
+      headers: {
+        "x-auth-token": token,
+      },
+    });
 
     setUserData({ user: likeData.data.currentUser, token });
   }

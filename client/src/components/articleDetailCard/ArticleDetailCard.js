@@ -30,24 +30,20 @@ const ArticleDetailCard = ({ singleArticle }) => {
 
   async function addBookmark() {
     let token = localStorage.getItem("token");
-    const likeData = await axios.get(
-      `/api/posts/${singleArticle._id}/like`,
-      {
-        headers: {
-          "x-auth-token": token,
-        },
-      }
-    );
+    const likeData = await axios.get(`/api/posts/${singleArticle._id}/like`, {
+      headers: {
+        "x-auth-token": token,
+      },
+    });
 
     setUserData({ user: likeData.data.currentUser, token });
   }
 
   const handleClaps = async () => {
     let token = localStorage.getItem("token");
-    const getClaps = await axios.get(
-      `/api/posts/${singleArticle?._id}/claps`,
-      { headers: { "x-auth-token": token } }
-    );
+    const getClaps = await axios.get(`/api/posts/${singleArticle?._id}/claps`, {
+      headers: { "x-auth-token": token },
+    });
     setClaps(getClaps.data?.data.claps);
   };
 
