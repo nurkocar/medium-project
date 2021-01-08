@@ -17,8 +17,10 @@
 }
 
 .username{
+    display: flex;
     font-size: smaller;
     padding-bottom: 8px;
+    align-items: center;
 }
 .card-profileImage{
     width: 20px;

@@ -33,7 +33,7 @@ const Card = (props) => {
               src={props.profileImage}
               alt=""
             />
-            {props.username}
+            <span>{props.username}</span>
           </div>
         </Link>
         <Link to={`/articleDetail/${props.id}`}>
