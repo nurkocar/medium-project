@@ -12,7 +12,7 @@ const ProfileListModal = () => {
     const history = useHistory()
     const Logout = async () => {
         const logoutRes = await axios.get(
-            "http://localhost:5000/api/auth/logout",
+            "/api/auth/logout",
             { headers: { "x-auth-token": userData.token } }
         );
         closeModal();

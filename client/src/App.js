@@ -33,7 +33,7 @@ function App() {
       let token = localStorage.getItem("token");
       if (token) {
         const userResponse = await axios.get(
-          "http://localhost:5000/api/auth/user",
+          "/api/auth/user",
           { headers: { "x-auth-token": token } }
         );
         setUserData({ user: userResponse?.data?.user, token });
@@ -50,7 +50,7 @@ function App() {
 
   useEffect(() => {
     const fetchArticles = async () => {
-      const articleData = await axios.get("https://medium-project.herokuapp.com/api/posts");
+      const articleData = await axios.get("/api/posts");
       setArticles(articleData?.data?.data);
     };
     fetchArticles();

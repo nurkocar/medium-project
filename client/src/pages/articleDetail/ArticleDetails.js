@@ -14,7 +14,7 @@ const ArticleDetails = () => {
 
     useEffect(() => {
         const fetchSingleArticle = async () => {
-            const singleArticleData = await axios.get(`http://localhost:5000/api/posts/${id}`)
+            const singleArticleData = await axios.get(`/api/posts/${id}`)
             setSingleArticle(singleArticleData?.data.data);
             console.log(singleArticleData?.data.data)
         }

@@ -21,7 +21,7 @@ const BigCard = (props) => {
   async function removeBookmark() {
     let token = localStorage.getItem("token");
     const undoLikeData = await axios.get(
-      `http://localhost:5000/api/posts/${props.id}/undolike`,
+      `/api/posts/${props.id}/undolike`,
       {
         headers: {
           "x-auth-token": token,
@@ -33,7 +33,7 @@ const BigCard = (props) => {
   async function addBookmark() {
     let token = localStorage.getItem("token");
     const likeData = await axios.get(
-      `http://localhost:5000/api/posts/${props.id}/like`,
+      `/api/posts/${props.id}/like`,
       {
         headers: {
           "x-auth-token": token,

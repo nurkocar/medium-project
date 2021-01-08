@@ -45,7 +45,7 @@ const SignInForm = ({ openSignInModal, signInModalIsOpen }) => {
       };
 
       const signResponse = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "/api/auth/login",
         newUser
       );
       console.log(signResponse);
@@ -55,7 +55,7 @@ const SignInForm = ({ openSignInModal, signInModalIsOpen }) => {
       });
       localStorage.setItem("token", signResponse?.data?.access_token);
       const userResponse = await axios.get(
-        "http://localhost:5000/api/auth/user",
+        "/api/auth/user",
         { headers: { "x-auth-token": signResponse.data.access_token } }
       );
       history.push("/");

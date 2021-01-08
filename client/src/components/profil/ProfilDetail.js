@@ -14,7 +14,7 @@ const ProfilDetail = () => {
   useEffect(() => {
     const fetchUser = async () => {
       const userProfileData = await axios.get(
-        `http://localhost:5000/api/users/${id}`
+        `/api/users/${id}`
       );
       setUserProfile(userProfileData?.data?.data);
     };
@@ -24,7 +24,7 @@ const ProfilDetail = () => {
   async function removeFollow() {
     let token = localStorage.getItem("token");
     const unFollowProfileData = await axios.get(
-      `http://localhost:5000/api/users/unfollow/${id}`,
+      `/api/users/unfollow/${id}`,
       {
         headers: {
           "x-auth-token": token,
@@ -37,7 +37,7 @@ const ProfilDetail = () => {
   async function addFollow() {
     let token = localStorage.getItem("token");
     const followProfileData = await axios.get(
-      `http://localhost:5000/api/users/follow/${id}`,
+      `/api/users/follow/${id}`,
       {
         headers: {
           "x-auth-token": token,

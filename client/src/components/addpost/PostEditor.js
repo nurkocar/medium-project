@@ -33,7 +33,7 @@ const PostEditor = () => {
       formData.append("author", userData.user._id);
       let token = localStorage.getItem("token");
       const postResponse = await axios.post(
-        "http://localhost:5000/api/posts/add",
+        "/api/posts/add",
         formData,
         {
           headers: {

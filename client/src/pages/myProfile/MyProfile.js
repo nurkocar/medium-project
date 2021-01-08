@@ -26,7 +26,7 @@ const MyProfile = () => {
       let token = localStorage.getItem("token");
       if (token) {
         const userResponse = await axios.get(
-          "http://localhost:5000/api/profile",
+          "/api/profile",
           { headers: { "x-auth-token": token } }
         );
         setUserProfile(userResponse.data.user);
@@ -51,7 +51,7 @@ const MyProfile = () => {
     let token = localStorage.getItem("token");
 
     const registerResponse = await axios.post(
-      "http://localhost:5000/api/profile/upload",
+      "/api/profile/upload",
       ProfilFormData,
       {
         headers: {
